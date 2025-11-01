@@ -13,6 +13,10 @@ ignoreLogs = ['warning-goldmark-raw-html']
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 6
+    ordered = false
 
 # 社交媒体链接
 [params]
