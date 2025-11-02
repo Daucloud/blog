@@ -88,14 +88,14 @@ This [sequence](#eq_oar) highlights two key ideas:
 This leads to the following definitions:
 ## Definitions
 ```callout {.info title="Definition: State"}
-A function of the history.
+A function of the **history**.
 $$
 s_t = f(o_1, a_1, r_1, \ldots, o_t)
 $$
 ```
 
 ```callout {title="Definition: Value"}
-A function that evaluates how good a state or action is.  
+A function that evaluates how good the current state is for the **future**.
 We usually consider two value functions:
 - State–action value:
 $$
@@ -146,6 +146,14 @@ The environment exists objectively, whereas the model is merely the agent’s es
 ```
 
 # Conclusion
-We have sketched the core ingredients of reinforcement learning—rewards, value, policy, and model—and highlighted why cumulative return matters more than any single outcome. For a worked example that ties these ideas together, I recommend pages 8–12 of [Prof. Wang’s Lecture 1 slides](https://coai.cs.tsinghua.edu.cn/Courses/RL2025/_site/static_files/ppt/basics.pptx); they walk through Dijkstra’s algorithm from an RL perspective with carefully prepared animations—far better than screenshots here could(and honestly I'm too lazy to recreate them here). The next post will dive into multi-armed bandits. 
+We have sketched the core ingredients of reinforcement learning—rewards, value, policy, and model—and highlighted why cumulative return matters more than any single outcome.
+
+**Key takeaways**
+- Actions are choices from environment-provided options, and rewards are the scalar feedback signals we must consider **cumulatively**, not step by step.
+- States summarize **history**, while value functions estimate **future** return.
+- A policy maps each state to a distribution over actions, defining the agent’s behaviour.
+- The model is the agent’s estimate of the environment.
+
+For a worked example that ties these ideas together, I recommend pages 8–12 of [Prof. Wang’s Lecture 1 slides](https://coai.cs.tsinghua.edu.cn/Courses/RL2025/_site/static_files/ppt/basics.pptx); they walk through Dijkstra’s algorithm from an RL perspective with carefully prepared animations—far better than screenshots I could share (and, honestly, I’m too lazy to recreate them here).
 
 Thanks for reading, and I hope this series continues to help with your own learning journey.
