@@ -2,6 +2,7 @@ baseURL = 'https://www.daucloud.com/'
 languageCode = 'en-US'
 Title = 'Daucloud'
 theme = "void"
+enableGitInfo = true
 defaultContentLanguage = "en"
 relativeURLs = false
 canonifyURLs = true
