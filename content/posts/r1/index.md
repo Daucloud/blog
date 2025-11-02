@@ -121,7 +121,7 @@ It denotes the policy, i.e., the probability of taking each action in the curren
 It is the discount factor for future rewards. Because future outcomes are less certain than immediate ones, we gradually downweight them. Typically, $0 \leq \gamma < 1$.
 
 Hence, [the goal of RL](#the-goal-of-rl) can be clarified more accurately as:
-```callout
+```callout {.tip}
 The goal of learning is to find the highest value states.
 ```
 
