@@ -72,7 +72,7 @@ These two concepts are closely related to [Action vs. Reward](#action-vs-reward)
 As shown in the [figure](#image-rl-overview) above, we can abstract the RL process as:
 <span id='eq_oar'>
 $$
-o_1, a_1, r_1, o_2, a_2, r_2, \ldots, o_t, a_t, r_t, \ldots, o_T, a_T, r_T
+o_1, a_1, r_1, \ldots, o_t, a_t, r_t, \ldots, o_T, a_T, r_T
 $$
 </span>
 where $o$ denotes observations, $a$ denotes actions, and $r$ denotes rewards; $t$ is the current time step; $k<t$ refers to the history, and $k>t$ refers to the predicted future.
@@ -126,7 +126,7 @@ The goal of learning is to find the highest value states.
 ```
 
 # Policy
-We introduced the idea of a policy [earlier](#what-does-the-subscript--mean); here is the precise definition.
+We introduced the idea of a policy [earlier](#what-does-the-subscript-pi-mean); here is the precise definition.
 
 ```callout {title="Definition: Policy"}
 A policy maps each state to a probability distribution over actions:
