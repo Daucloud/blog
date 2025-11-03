@@ -59,7 +59,7 @@ This means the agent does not decide the options: they are given by the environm
 ## The Goal of RL
 Nowadays, when researchers train LLMs with RL methods, they often use reward as a key metric to evaluate performance, which leads to a common misconception: that RL tries to maximize the reward of a single action. This is wrong because the true feedback may be delayed. Some actions that seem good now may lead to increasingly worse situations, while some actions that seem not so good now may turn out to be wise after a few steps. Hence, [as summarized before](#rl-in-short):
 
-```callout {.tip}
+```callout {.tip title="The Goal of Learning From the Perspective of Reward"}
 The goal of learning is to maximize **cumulative** reward.
 ```
 
@@ -121,7 +121,7 @@ It denotes the policy, i.e., the probability of taking each action in the curren
 It is the discount factor for future rewards. Because future outcomes are less certain than immediate ones, we gradually downweight them. Typically, $0 \leq \gamma < 1$.
 
 Hence, [the goal of RL](#the-goal-of-rl) can be clarified more accurately as:
-```callout {.tip}
+```callout {.tip title="The Goal of Learning From the Perspective of Value"}
 The goal of learning is to find the highest value states.
 ```
 
@@ -141,12 +141,12 @@ Here $\Delta(\mathcal A)$ denotes the probability simplex over $\mathcal A$—al
 The model is the agent’s estimated view of the environment.
 ```
 
-```callout {.tip}
+```callout {.tip title="Model vs. Environment"}
 The environment exists objectively, whereas the model is merely the agent’s estimate, inferred from history.
 ```
 
 # Conclusion
-We have sketched the core ingredients of reinforcement learning—rewards, value, policy, and model—and highlighted why cumulative return matters more than any single outcome.
+We have sketched the core ingredients of reinforcement learning—reward, value, policy, and model—and highlighted why cumulative return matters more than any single outcome.
 
 ```callout {.tip title="Key takeaways"}
 - Actions are choices from environment-provided options, and rewards are the scalar feedback signals we must consider **cumulatively**, not step by step.
