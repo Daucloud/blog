@@ -126,7 +126,7 @@ The goal of learning is to find the highest value states.
 ```
 
 # Policy
-We introduced the idea of a policy [earlier](#what-does-the-subscript-pi-mean); here is the precise definition.
+We introduced the idea of policy [earlier](#what-does-the-subscript-pi-mean); here is the precise definition.
 
 ```callout {title="Definition: Policy"}
 A policy maps each state to a probability distribution over actions:
