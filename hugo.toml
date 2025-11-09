@@ -12,6 +12,12 @@ ignoreLogs = ['warning-goldmark-raw-html']
 # 允许在Markdown中使用原始HTML
 [markup]
   [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [["$$","$$"], ["\\[","\\]"]]
+          inline = [["$","$"], ["\\(","\\)"]]
     [markup.goldmark.parser]
       autoHeadingID = true
       autoHeadingIDType = "github"
