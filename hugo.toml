@@ -36,9 +36,9 @@ ignoreLogs = ['warning-goldmark-raw-html']
   [params.social]
     github = "https://github.com/Daucloud"
     zhihu = "https://zhihu.com/people/daucloud"
-    email = "xinyuan-23@mails.tsinghua.edu.cn"
+    email = "1311700152@qq.com"
   [params.avatar]
-    url = "https://img.picgo.net/2025/03/23/20250323133122762dc0742d658f46dec.jpeg"
+    url = "/avatar.jpg"
 [[menus.main]]
 name = 'Home'
 pageRef = '/'

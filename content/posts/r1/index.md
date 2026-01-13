@@ -75,7 +75,7 @@ $$
 o_1, a_1, r_1, \ldots, o_t, a_t, r_t, \ldots, o_T, a_T, r_T
 $$
 </span>
-where $o$ denotes observations, $a$ denotes actions, and $r$ denotes rewards; $t$ is the current time step; $k<t$ refers to the history, and $k>t$ refers to the predicted future.
+where $o$ denotes observations, $a$ denotes actions, and $r$ denotes rewards; $t$ is the current time step; $k < t$ refers to the history, and $k > t$ refers to the predicted future.
 
 This sequence describes the standard RL loop: the agent observes the environment, chooses an action, receives feedback, and then observes the updated environment, and so on so forth.
 
@@ -99,12 +99,12 @@ A function that evaluates how good the current state is for the **future**.
 We usually consider two value functions:
 - State–action value:
 $$
-v_\pi(s_t, a_t) = \mathbb{E}_\pi\left[ \sum_{i=t}^T \gamma^{i-t} r_i \right]
+Q_\pi(s_t, a_t) = \mathbb{E}_\pi\left[ \sum_{i=t}^T \gamma^{i-t} r_i \right]
 $$
 
 - State value:
 $$
-v_\pi(s_t) = \mathbb{E}_{a_t \sim \pi(s_t)}\!\left[ v_\pi(s_t, a_t) \right]
+v_\pi(s_t) = \mathbb{E}_{a_t \sim \pi(s_t)}\!\left[ Q_\pi(s_t, a_t) \right]
 $$
 ```
 
