@@ -93,14 +93,18 @@ v\left(s_t\right) &= \mathbb{E}_{a_t\sim\pi\left(\cdot\mid s_t\right)}\left[Q\le
 &= \mathbb E_{\pi}\left[R_{t+1} \mid S_t=s_t\right] + \gamma \mathbb E_{\pi}\left[G_{t+1} \mid S_t=s_t\right] \\
 \end{aligned}
 $$
+
 For the first half, we have:
+
 $$
 \begin{aligned}
 \mathbb{E}_\pi\left[R_{t+1}\mid S_t=s_t\right] &= \sum\limits_{a_t}\pi\left(a_t\mid s_t\right)\sum_{s_{t+1}}\mathbb E\left[R_{t+1}\mid S_t = s_t, A_t = a_t, S_{t+1} = s_{t+1} \right]\Pr\left(S_{t+1}=s_{t+1}\mid S_t =s_t, A_t =a_t\right) \\
 &= \sum\limits_{a_t}\pi\left(a_t\mid s_t\right)\sum_{s_{t+1}}R\left(s_t,a_t,s_{t+1}\right)P\left(s_{t+1}\mid s_t,a_t\right) \\
 \end{aligned}
 $$
+
 For the second half, we have:
+
 $$
 \begin{aligned}
 \mathbb E_{\pi}\left[G_{t+1} \mid S_t=s_t\right] &= \mathbb E_\pi\left[\mathbb E_{\pi}\left[G_{t+1}\mid S_{t+1} \right]\mid S_t=s_t\right] \\
@@ -109,10 +113,13 @@ $$
 & = \sum_{a_{t}}\pi\left(a_t\mid s_t\right)\sum_{s_{t+1}}P\left(s_{t+1}\mid s_t,a_t\right)v\left(s_{t+1}\right)
 \end{aligned}
 $$
+
 Combine the two halves together, we have:
+
 $$
 v\left(s_t\right) = \sum_{a_t}\pi\left(a_t\mid s_t\right)\sum_{s_{t+1}}P\left(s_{t+1}\mid s_t,a_t\right)\left[R\left(s_t,a_t,s_{t+1}\right)+\gamma v\left(s_{t+1}\right)\right]
 $$
+
 Remove all notations with time subscripts, we have the Bellman Equation.
 
 ```callout{.info title = "Definition: Bellman Equation"}
