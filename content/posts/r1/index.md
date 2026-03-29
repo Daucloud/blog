@@ -15,7 +15,7 @@ I’ve decided to turn the course material into a series of blog posts—not onl
 The major topics of this series are:
 - Basics of Reinforcement Learning
 - Multi-Armed Bandits
-- Markov Decision Processes (MDPs)
+- Markov Decision Processes
 - Dynamic Programming
 - Monte Carlo Methods
 - Temporal-Difference Learning
@@ -87,11 +87,13 @@ This [sequence](#eq_oar) highlights two key ideas:
 
 This leads to the following definitions:
 ## Definitions
-```callout {.info title="Definition: State"}
+
+```callout {.info title="Definition: State" id="definition-state"}
 A function of the **history**.
 $$
-s_t = f(o_1, a_1, r_1, \ldots, o_t)
+s_t = f(o_0, a_0, r_1, o_1, a_1, r_2 \ldots, o_t)
 $$
+At time $t$, we receive an observation $o_t$, decide to take an action $a_t$, and then receive a reward $r_{t+1}$ and a new observation $o_{t+1}$
 ```
 
 ```callout {title="Definition: Value"}
@@ -99,12 +101,13 @@ A function that evaluates how good the current state is for the **future**.
 We usually consider two value functions:
 - State–action value:
 $$
-Q_\pi(s_t, a_t) = \mathbb{E}_\pi\left[ \sum_{i=t}^T \gamma^{i-t} r_i \right]
+Q_\pi(s_t, a_t) = \mathbb{E}_\pi\left[ \sum_{k=t+1}^{T} \gamma^{k-t-1} R_k\mid S_t=s_t,A_t=a_t \right]
 $$
+where $R_k$ represents the random varaible for reward.
 
 - State value:
 $$
-v_\pi(s_t) = \mathbb{E}_{a_t \sim \pi(s_t)}\!\left[ Q_\pi(s_t, a_t) \right]
+v_\pi(s_t) = \mathbb{E}_{a_t \sim \pi(\cdot\mid s_t)}\left[ Q_\pi(s_t, a_t) \right]
 $$
 ```
 
@@ -121,8 +124,8 @@ It denotes the policy, i.e., the probability of taking each action in the curren
 It is the discount factor for future rewards. Because future outcomes are less certain than immediate ones, we gradually downweight them. Typically, $0 \leq \gamma < 1$.
 
 Hence, [the goal of RL](#the-goal-of-rl) can be clarified more accurately as:
-```callout {.tip title="The Goal of Learning From the Perspective of Value"}
-The goal of learning is to find the highest value states.
+```callout {.tip title="The Goal of Learning From the Perspective of Value" id="the-goal-of-rl-in-value"}
+The goal of learning is to find the states with highest value.
 ```
 
 # Policy
@@ -148,7 +151,7 @@ The environment exists objectively, whereas the model is merely the agent’s es
 # Conclusion
 We have sketched the core ingredients of reinforcement learning—reward, value, policy, and model—and highlighted why cumulative return matters more than any single outcome.
 
-```callout {.tip title="Key takeaways"}
+```callout {.tip title="Takeaways"}
 - Actions are choices from environment-provided options, and rewards are the scalar feedback signals we must consider **cumulatively**, not step by step.
 - States summarize **history**, while value functions estimate **future** return.
 - A policy maps each state to a distribution over actions, defining the agent’s behaviour.
