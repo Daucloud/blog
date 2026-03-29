@@ -9,6 +9,7 @@ categories = ["Programming"]
 1. `pip install Pygments`. `Minted`依赖`pygmentize`来提供语法高亮支持。
 2. 打开`VScode`的`settings.json`，找到（或添加）`latex-workshop.latex.tools`配置，并在各个`tools`的`args`选项中添加`-shell-escape`选项。兹列出我的配置如下：
 ```json
+{
   "latex-workshop.latex.tools": [
     {
       "name": "xelatex",
@@ -76,6 +77,7 @@ categories = ["Programming"]
       "name": "pdflatex -> bibtex -> pdflatex*2",
       "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
     }
-  ],
+  ]
+}
 ```
 > 务必确保`--shell-escape`选项在`%DOCFILE%`或`%DOC%`之前！
