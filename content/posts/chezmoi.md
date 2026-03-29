@@ -82,7 +82,7 @@ chezmoi add ~/.gitconfig --template
 2. `chezmoi cd`
 3. `vim .chezmoi.toml.tmpl`，编辑其中内容如下：
 
-```toml
+```go-template
 {{ $email := promptStringOnce . "email" "What is your email address" -}}
 
 data:
