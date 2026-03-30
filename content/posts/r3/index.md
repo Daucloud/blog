@@ -14,29 +14,22 @@ Anyway, let's continue the journey of RL with the well-known MDP -- Markov Decis
 # Introduction
 Let's first revisit [the concept of state in the first post](../r1/index.md/#definition-state):
 
-```callout {.info title="Recall: Definition of State"}
-A function of the **history**.
 $$
 s_t = f(o_0, a_0, r_1, o_1, a_1, r_2, \ldots, o_t)
 $$
-```
 
-If we represent $h_t = (o_0, a_0, r_1, \ldots, o_t)$, then
+Define history $h_t = \left(o_0, a_0, r_1, o_1, a_1, r_2, \ldots, o_t\right)$.
 
-<span id="state-expansion">
+In a general RL process, the agent will take an action $a_t$ based on the full history $h_t$, and then recevie a new reward $r_{t+1}$ and observe a new $o_{t+1}$.
+
+However, modeling based on the full history is often intractable. If we can find a function $f$ such that $s_t$ is a sufficient statistic of the history for predicting future, then:
 $$
-s_t = f\left(h_t\right) = f\left(h_{t-1},a_{t-1},r_t,o_t\right)
+\Pr\left(o_{t+1},r_{t+1}\mid h_t, a_t\right) = \Pr\left(o_{t+1},r_{t+1}\mid s_t, a_t\right)
 $$
-</span>
+In this case, $s_t$ is a Markov state.
 
-As shown, we expand the history $h_t$ recursively as the argument of the definition function $f$. How about also defining $s_t$ in the recursive way?
+If $o_t$ itself is already a sufficient statistic of the history (i.e., the system is fully observable), we can simply pick $s_t:=o_t$, which leads to the Markov Property:
 
-If $s_t$ contains all the useful information in the history $h_t$, we can construct $s_t$ by a new function $g$ without loss of information:
-$$
-s_t = g\left(s_{t-1},a_{t-1},r_t,o_{t}\right)
-$$
-
-For the agent taking action, only the action $a_t$ is determined by itself, and $r_t$ and $o_t$ can all be viewed as part of the environment with randomness, and $o_t$ is often ignored since we merge it into the state $s_t$. This leads to the assumption of the **Markov Property**.
 
 ```callout{.info title="Definition: Markov Property"}
 Assume that the state $s_t$ contains all the useful information in history $h_t$. Then we have:
