@@ -1,6 +1,6 @@
 +++
 date = '2026-06-16T02:57:24+08:00'
-draft = true
+draft = false
 title = '恢复了2024年的旧博客！'
 categories = ['Misc']
 +++
