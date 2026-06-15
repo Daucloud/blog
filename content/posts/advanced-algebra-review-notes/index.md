@@ -198,7 +198,9 @@ $$
 其中：
 
 $$
-\begin{aligned}&w_1=v_1\\&w_2=v_2-\frac{\left<w_1,v_2\right>}{\left<w_1,w_1\right>}w_1\\&w_3=v_3-\frac{\left<w_1,v_3\right>}{\left<w_1,w_1\right>}w_1-\frac{\left<w_2,v_3\right>}{\left<w_2,w_2\right>}w_2\\&\vdots\\&w_n=v_n-\frac{\left<w_1,v_n\right>}{\left<w_1,w_1\right>}w_1-\frac{\left<w_2,v_n\right>}{\left<w_2,w_2\right>}w_2-\cdots-\frac{\left<w_n,v_n\right>}{\left<w_n,w_n\right>}w_n\\\end{aligned}
+w_1=v_1,\qquad
+w_k=v_k-\sum_{j=1}^{k-1}\frac{\langle w_j,v_k\rangle}{\langle w_j,w_j\rangle}w_j,
+\quad k=2,\dots,n
 $$
 
 上学期的内容，不过多赘述
