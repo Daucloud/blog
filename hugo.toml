@@ -5,7 +5,7 @@ theme = "void"
 enableGitInfo = true
 defaultContentLanguage = "en"
 relativeURLs = false
-canonifyURLs = true
+canonifyURLs = false
 # 忽略特定的警告日志
 ignoreLogs = ['warning-goldmark-raw-html']
 
